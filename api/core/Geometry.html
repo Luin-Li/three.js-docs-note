@@ -186,6 +186,14 @@
 		The array of vertices holds the position of every vertex in the model.<br />
 		To signal an update in this array, [page:.verticesNeedUpdate] needs to be set to true.
 		</p>
+		<div style="background-color: #fff9c4">
+			threejs中没有提供单独画点的函数，它必须被放到一个THREE.Geometry形状中，这个结构中包含一个数组vertices，
+			这个vertices就是存放无数的点（THREE.Vector3）的数组。
+			<p style="color: rgb(107, 142, 35);">
+			  画一个点的时候先定义一个带坐标系位置的点(如：new THREE.Vector3( -10,  10, 0 ))，
+			  然后我们声明一个THREE.Geometry，并把点加push进数组vertices
+		    </p>
+		</div>
 
 		<h3>[property:Boolean verticesNeedUpdate]</h3>
 		<p>Set to *true* if the vertices array has been updated.</p>

@@ -38,13 +38,34 @@ scene.add( camera );</code>
 
 		<h3>[name]( [param:Number fov], [param:Number aspect], [param:Number near], [param:Number far] )</h3>
 		<p>
-		fov — Camera frustum vertical field of view.<br />
-		aspect — Camera frustum aspect ratio.<br />
-		near — Camera frustum near plane.<br />
-		far — Camera frustum far plane.<br /><br />
+		fov — Camera frustum vertical field of view.
+		<div style="color: rgb(107, 142, 35);">视角，视角越大，拍摄到的场景范围就越大，能看到的物体就显得越小。</div>
+		<br />
+		aspect — Camera frustum aspect ratio.<span style="color: rgb(107, 142, 35);">看到的窗口宽度和高度的比例</span><br />
+		near — Camera frustum near plane.<span style="color: rgb(107, 142, 35);">能看到的最近处的距离</span><br />
+		far — Camera frustum far plane.<span style="color: rgb(107, 142, 35);">和能看到的最远处的距离</span><br /><br />
 
 			Together these define the camera's [link:https://en.wikipedia.org/wiki/Viewing_frustum viewing frustum].
 		</p>
+
+		<div style="background-color: #fff9c4">
+		<p span style="color: #E91E63;font-size: 20px;">举例</p>
+		<code style="background-color: #fff9c4!important;">
+			camera = new THREE.PerspectiveCamera( 45, 1, 1, 1000 )
+            camera.position.set(0,-10,0)
+            camera.lookAt( new THREE.Vector3( 0, 0, 0 ));
+		</code>
+		<p>
+			<span style="color: rgb(107, 142, 35);">拍照的时候有两个变量：相机的位置和拍摄的方向。</span>camera.position.set()即为相机的位置,camera.lookAt即为相机的拍摄方向,就是camera面向哪里。
+			还有一个额外的变量是camera.up，即为相机的头顶。设置的方向必须与camera位置和lookAt的连线不能平行，否则拍不到场景。
+			例如，camera的初始化设置
+			<code style="background-color: #fff9c4!important;">camera.up.x=0;camera.up.y=1;camera.up.z=0；</code>
+			即camera“头顶”的方向和向量（0，1，0）同向，即和y轴正方向同向。
+		</p>
+		<p style="text-align: center">
+          <img src="note-img/camera.png">
+		</p>
+	   </div>
 
 
 		<h2>Properties</h2>

@@ -12,13 +12,17 @@
 
 		<p>The goal of this section is to give a brief introduction to three.js. We will start by setting up a scene, with a spinning cube. A working example is provided at the bottom of the page in case you get stuck and need help.</p>
 
-		<p style="color: rgb(107, 142, 35);">
+		<div style="background-color: #fff9c4">
+		  <p>
+			three.js的坐标系，使用的是右手坐标系,即一个右手大拇指z轴指向你的三维坐标系。
+		  </p>
+		  <p style="color: rgb(107, 142, 35);">
 			三大组件--》场景（scene）、相机（camera）和渲染器（renderer）
 			<ul>
 			  <li>构建一个场景new THREE.Scene()</li>
 			  <li>创建一个相机：如透视相机new THREE.PerspectiveCamera()</li>
 			  <li>设置渲染器
-				<code>
+				<code style="background-color: #fff9c4!important;">
 					var renderer = new THREE.WebGLRenderer();
 					renderer.setSize(window.innerWidth, window.innerHeight);
 					document.body.appendChild(renderer.domElement);
@@ -26,10 +30,14 @@
 			   </li>
 			   <li>添加物体到场景中:scene.add(object)</li>
 			   <li>渲染：renderer.render(scene,camera)</li>
-			   <li>循环渲染：离线渲染<span style="color: #e1bee7">(事先渲染好一帧一帧的图片，然后再把图片拼接成电影的)</span>
-				和实时渲染(就是需要不停的对画面进行渲染，即使画面中什么也没有改变，也需要重新渲染。)</li>
+			   <li>循环渲染：离线渲染<span style="color: #3f51b5">(事先渲染好一帧一帧的图片，然后再把图片拼接成电影的)</span>
+				和实时渲染<span style="color: #3f51b5">(就是需要不停的对画面进行渲染，即使画面中什么也没有改变，也需要重新渲染。)</span></li>
 			</ul>
-		</p>
+		  </p>
+		  <div style="text-align: center">
+			<img src="note-img/get-start.png"/>
+		  </div>
+		</div>
 		<h2>Before we start</h2>
 
 		<p>Before you can use three.js, you need somewhere to display it. Save the following HTML to a file on your computer, along with a copy of [link:https://threejs.org/build/three.js three.js] in the js/ directory, and open it in your browser.</p>

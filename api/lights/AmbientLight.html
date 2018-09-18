@@ -35,6 +35,19 @@ scene.add( light );</code>
 		当你仅为场景指定环境光时，所有的物体无论法向量如何，都将表现为同样的明暗程度。环境光将照射场景中的所有物体，
 		环境光就是在场景中无处不在的光，它对物体的影响是均匀的，也就是无论你从物体的那个角度观察，物体的颜色都是一样的。
 		你可以把环境光放在任何一个位置，它的光线是不会衰减的，是永恒的某个强度的一种光源。
+		<p style="color: #FF008F">混合光源即作用在同一物体上有多种光源，此时为颜色的叠加。（相加后除以2）</p>
+<code style="background-color: #fff9c4!important;">
+	// 环境光rgb(179,157,219)
+    const light2 = new THREE.AmbientLight(0xb39ddb,1)
+    scene.add(light2);
+
+    // 聚光灯rgb(255,255,255)
+    const light = new THREE.SpotLight(0xffffff, 0.5)
+    light.position.set(0, 150,0);
+    scene.add(light);
+
+    // 叠加rgb(217,206,237)
+</code>
 	</div>
 
 		<h2>Constructor</h2>

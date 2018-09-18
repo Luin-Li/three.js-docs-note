@@ -18,7 +18,6 @@
 			This light cannot be used to cast shadows as it does not have a direction.
 		</p>
 
-
 		<h2>Example</h2>
 		<p>
 			[example:canvas_camera_orthographic camera / orthographic ]<br />
@@ -31,6 +30,12 @@
 
 <code>var light = new THREE.AmbientLight( 0x404040 ); // soft white light
 scene.add( light );</code>
+
+    <div style="background-color: #fff9c4">
+		当你仅为场景指定环境光时，所有的物体无论法向量如何，都将表现为同样的明暗程度。环境光将照射场景中的所有物体，
+		环境光就是在场景中无处不在的光，它对物体的影响是均匀的，也就是无论你从物体的那个角度观察，物体的颜色都是一样的。
+		你可以把环境光放在任何一个位置，它的光线是不会衰减的，是永恒的某个强度的一种光源。
+	</div>
 
 		<h2>Constructor</h2>
 

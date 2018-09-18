@@ -10,7 +10,7 @@
 	<body>
 		[page:Object3D] &rarr; [page:Light] &rarr;
 
-		<h1>[name]</h1>
+		<h1>[name]方向光</h1>
 
 		<p class="desc">
 			A light that gets emitted in a specific direction. This light will behave as though it is
@@ -20,6 +20,7 @@
 
 			This light can cast shadows - see the [page:DirectionalLightShadow] page for details.
 		</p>
+		<p>一组没有衰减的平行的光线</p>
 
 		<h2>A Note about Position, Target and rotation</h2>
 		<p>
@@ -63,7 +64,11 @@ scene.add( directionalLight );
 		<h3>[name]( [param:Integer color], [param:Float intensity] )</h3>
 		<p>
 			[page:Integer color] - (optional) hexadecimal color of the light. Default is 0xffffff (white).<br />
-			[page:Float intensity] - (optional) numeric value of the light's strength/intensity. Default is 1.<br /><br />
+			[page:Float intensity] - (optional) numeric value of the light's strength/intensity. Default is 1.
+			<p>光照越强，物体表面就更明亮。它的取值范围是0到1。如果为0，表示光线基本没什么作用，那么物体就会显示为黑色。
+				方向光只与方向有关，与离物体的远近无关。
+			</p>
+			<br /><br />
 
 			Creates a new [name].
 		</p>

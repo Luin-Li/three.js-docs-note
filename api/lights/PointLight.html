@@ -10,7 +10,7 @@
 	<body>
 		[page:Object3D] &rarr; [page:Light] &rarr;
 
-		<h1>[name]</h1>
+		<h1>[name]点光源</h1>
 
 		<p class="desc">
 			A light that gets emitted from a single point in all directions. A common use case for this
@@ -43,10 +43,14 @@ scene.add( light );
 
 		<h3>[name]( [param:Integer color], [param:Float intensity], [param:Number distance], [param:Float decay] )</h3>
 		<p>
-			[page:Integer color] - (optional) hexadecimal color of the light. Default is 0xffffff (white).<br />
-			[page:Float intensity] - (optional) numeric value of the light's strength/intensity. Default is 1.<br /><br />
+			[page:Integer color] - (optional) hexadecimal color of the light. Default is 0xffffff (white).光的颜色<br />
+			[page:Float intensity] - (optional) numeric value of the light's strength/intensity. Default is 1.
+			光的强度，默认是1.0,就是说是100%强度的灯光
+			<br /><br />
 			[page:Number distance] - The distance from the light where the intensity is 0.
-			When set to 0, then the light never stops. Default is 0.<br />
+			When set to 0, then the light never stops. Default is 0.
+			光的距离，从光源所在的位置，经过distance这段距离之后，光的强度将从Intensity衰减为0。 默认情况下，这个值为0.0，表示光源强度不衰减。
+			<br />
 			[page:Float decay] - The amount the light dims along the distance of the light. Default is 1.
 			For [page:WebGLRenderer.physicallyCorrectLights physically correct] lighting, set this to 2.<br /><br />
 

@@ -392,6 +392,21 @@
 			either the [page:WebGLRenderer.autoClearColor autoClearColor], [page:WebGLRenderer.autoClearStencil autoClearStencil] or [page:WebGLRenderer.autoClearDepth autoClearDepth] properties to false.
 		</p>
 
+        <div style="background-color: #fff9c4">
+			常用的循环渲染：
+			<code style="background-color: #fff9c4!important;">
+				function animate() {
+					render(); // 渲染函数
+					requestAnimationFrame( animate );
+				}
+				function render() {
+					// 一些视角或场景内物体的变化
+					renderer.render( scene, camera );
+				}
+			</code>
+            <p>常见的动画除了改变物体的状态外，可以通过改变相机的位置和角度实现动画。例如：相机向左移，相当于物体向右移。</p>
+		</div>
+
 		<h3>[method:null renderBufferDirect]( [param:Camera camera], [param:Array lights], [param:Fog fog], [param:Material material], [param:Object geometryGroup], [param:Object3D object] )</h3>
 		<p>Render a buffer geometry group using the camera and with the specified material.</p>
 

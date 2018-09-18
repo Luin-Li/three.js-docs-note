@@ -10,7 +10,7 @@
 	<body>
 		[page:Object3D] &rarr; [page:Light] &rarr;
 
-		<h1>[name]</h1>
+		<h1>[name]聚光灯</h1>
 
 		<p class="desc">
 			This light gets emitted from a single point in one direction, along a cone that increases in size
@@ -69,16 +69,23 @@
 
 		<h3>[name]( [param:Integer color], [param:Float intensity], [param:Float distance], [param:Radians angle], [param:Float penumbra], [param:Float decay] )</h3>
 		<p>
-			[page:Integer color] - (optional) hexadecimal color of the light. Default is 0xffffff (white).<br />
-			[page:Float intensity] - (optional) numeric value of the light's strength/intensity. Default is 1.<br /><br />
+			[page:Integer color] - (optional) hexadecimal color of the light. Default is 0xffffff (white).
+			聚光灯发出的颜色
+			<br />
+			[page:Float intensity] - (optional) numeric value of the light's strength/intensity. Default is 1.
+			光源的强度，默认是1.0，如果为0.5，则强度是一半，意思是颜色会淡一些。
+			<br /><br />
 			[page:Float distance] - Maximum distance from origin where light will shine whose intensity
-			is attenuated linearly based on distance from origin. <br />
+			is attenuated linearly based on distance from origin. 
+			光线的强度，从最大值衰减到0，需要的距离。
+			<br />
 			[page:Radians angle] - Maximum angle of light dispersion from its direction whose upper
-			bound is Math.PI/2.<br />
+			bound is Math.PI/2.
+			聚光灯着色的角度，用弧度作为单位，这个角度是和光源的方向形成的角度。
+			<br />
 			[page:Float penumbra] - Percent of the spotlight cone that is attenuated due to penumbra.
 			Takes values between zero and 1. Default is zero.<br />
 			[page:Float decay] - The amount the light dims along the distance of the light.<br /><br />
-
 			Creates a new [name].
 		</p>
 

@@ -16,5 +16,24 @@
 
 			You can find it [link:https://github.com/mrdoob/three.js/wiki/Migration-Guide here].
 		</p>
+
+		<p style="background-color: #ffeb3b;width: 80px">补充记录</p>
+		<div>
+			<p>1.性能监视器Stats</p>
+			<p>测试一个程序，性能上是否有瓶颈，在3D世界里，经常使用帧数的概念。
+				<span style="color: rgb(107, 142, 35);">帧数：图形处理器每秒钟能够刷新几次，通常用fps（Frames Per Second）来表示。</span>
+				一般为60左右。FPS表示上一秒的帧数，MS表示渲染一帧需要的毫秒数。<span style="color:#f48fb1">MS越小越好,fps越大越好。</span>
+			</p>
+			<p>使用：
+				<ol>
+					<li>npm install stats-js或引入stats.min.js</li>
+					<li>在初始化函数中new Stats()，
+						可通过stats.domElement.style.~修改其样式，然后通过~.appendChild(stats)将其插入到监视的区域
+						<p style="color: #3f51b5">如：stats.domElement.style.float = 'right';</p>
+					</li>
+					<li>在循环渲染处通过stats.update();更新其状态</li>
+				</ol>
+			</p>
+		</div>
 	</body>
 </html>

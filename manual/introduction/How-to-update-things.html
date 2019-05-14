@@ -33,6 +33,22 @@ object.updateMatrix();
 		</code>
 
 		<h2>Geometries</h2>
+
+		<div style="background-color: #fff9c4">
+          <p>
+			比如说,如果你修改了一个mesh对象的顶点属性vertices，你要给Three.js一个标识，告诉它如果什么东西改变了，需要重新计算缓存中的结构,
+			否则你会发现在下次渲染循环中，什么都没变。因为Three.js将mesh对象的信息缓存为某种优化结构了。
+		  </p>
+<code style="background-color: #fff9c4!important;">
+	    // 设置geometry为动态的，这样才允许改变其中的顶点
+		sphere.geometry.dynamic = true;
+		// 告诉Three.js，需要重新计算顶点
+		sphere.geometry.verticesNeedUpdate = true;
+		// geometry.faces[i].normal and geometry.vertices[i].normal发生变化的时候设置true
+		sphere.geometry.normalsNeedUpdate = true;
+</code>
+		</div>
+
 		<div>
 			<h3>[page:BufferGeometry]</h3>
 			<div>

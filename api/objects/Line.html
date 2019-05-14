@@ -47,6 +47,31 @@
 		scene.add( line );
 		</code>
 
+		<div style="background-color: #fff9c4">
+			THREE.Mesh可以和THREE.Line相提并论，他们都是模型，区别是THREE.Line表示的是线条。THREE.Mesh表示面的集合,又称为网格模型。
+<code style="background-color: #fff9c4!important;">
+	// 线模型
+	const geometry = new THREE.Geometry()
+	const material = new THREE.LineBasicMaterial({ 
+	  color: 0xb39ddb
+	})
+		  
+	const p1 = new THREE.Vector3(-100,0,100)
+	const p2 = new THREE.Vector3(100,0,-100)
+	geometry.vertices.push(p1,p2)
+		  
+	const line = new THREE.Line(geometry, material) // 【线模型】
+	scene.add(line)
+
+	// 面模型
+	const geometry = new THREE.CylinderBufferGeometry( 5, 10, 20, 20); // 一个圆柱体
+    const material = new THREE.MeshLambertMaterial( {color: 0xb39ddb} );
+    const cylinder = new THREE.Mesh( geometry, material ); // 【面模型】
+    scene.add( cylinder );
+</code>
+		</div>
+		
+
 
 		<h2>Constructor</h2>
 
